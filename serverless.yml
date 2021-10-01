@@ -3,13 +3,22 @@ frameworkVersion: '2'
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   lambdaHashingVersion: '20201221'
+
+plugins:
+  - serverless-offline
 
 functions:
   hello:
-    handler: handler.hello
+    handler: functions/index/handler.endpoint
     events:
       - httpApi:
           path: /
+          method: get
+  mySecondFunction: # function/endpoint name
+    handler: functions/mySecondFunction/handler.endpoint # where the function is located
+    events:
+      - httpApi:
+          path: /my-second-function # what is the endpoint
           method: get
