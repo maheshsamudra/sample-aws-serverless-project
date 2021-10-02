@@ -5,7 +5,7 @@ module.exports.endpoint = async (event) => {
         statusCode: 200,
         body: JSON.stringify(
             {
-                message: "Welcome to Serverless Example Project",
+                message: "Welcome to Serverless Example Project with CI",
             },
             null,
             2
