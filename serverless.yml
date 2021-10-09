@@ -22,3 +22,9 @@ functions:
       - httpApi:
           path: /my-second-function # what is the endpoint
           method: get
+  user:
+    handler: functions/user/handler.endpoint # where the function is located
+    events:
+      - httpApi:
+          path: /user
+          method: post
