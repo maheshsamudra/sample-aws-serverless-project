@@ -38,9 +38,7 @@ const inputSchema = {
 }
 
 // Adding middlewares from middy.
-const endpoint = middy(handler)
+module.exports.endpoint = middy(handler)
     .use(jsonBodyParser()) // parses the request body when it's a JSON and converts it to an object
     .use(validator({inputSchema})) // validates the input
     .use(httpErrorHandler()) // handles common http errors and returns proper responses
-
-module.exports = { endpoint }
