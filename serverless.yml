@@ -1,15 +1,17 @@
 service: sample-aws-serverless-project
-frameworkVersion: '2'
+frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs14.x
-  lambdaHashingVersion: '20201221'
+  runtime: nodejs16.x
+  lambdaHashingVersion: "20201221"
   httpApi:
     cors: true
 
 plugins:
   - serverless-offline
+
+useDotenv: true
 
 functions:
   hello:
@@ -29,4 +31,4 @@ functions:
     events:
       - httpApi:
           path: /user
-          method: post
+          method: get
